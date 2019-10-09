@@ -35,7 +35,7 @@ scp)
   if [ -z "${action}" ]; then
     do_ssh
   else
-    echo "请输入 ssh 或 scp 命令 以执行响应的功能"
+    echo "请输入 ssh 或 scp 命令 以执行相应的功能"
   fi
   ;;
 esac
