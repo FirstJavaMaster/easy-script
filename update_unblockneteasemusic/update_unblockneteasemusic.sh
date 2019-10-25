@@ -12,3 +12,4 @@ docker-compose -f /data/docker-compose/unblock-netease-music.yml up -d
 
 # 清理陈旧镜像
 docker system prune --force
+
