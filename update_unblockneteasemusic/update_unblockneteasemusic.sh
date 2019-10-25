@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# 打印时间
+time=$(date '+%Y-%m-%d %H:%M:%S')
+echo "开始执行脚本 ${time}"
+
 # 更新docker镜像
 docker pull nondanee/unblockneteasemusic
 
