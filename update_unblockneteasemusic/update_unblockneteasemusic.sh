@@ -1,6 +1,9 @@
 #!/bin/bash
 
+source /etc/profile
+
 # 打印时间
+echo ""
 time=$(date '+%Y-%m-%d %H:%M:%S')
 echo "开始执行脚本 ${time}"
 
