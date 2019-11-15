@@ -19,7 +19,11 @@ mysqldump --login-path=slkj --databases "${database}" > "${tmp_file}"
 echo "压缩到文件: ${tar_file}"
 tar -czPf "${tar_file}" "${tmp_file}"
 
-echo "清理临时sql文件"
+echo "清理临时sql文件..."
 rm -f "${tmp_file}"
+
+echo ""
+echo "删除过期备份..."
+find "${target_dir}" -mtime +30 -type f -name "*.tar.gz" -print -exec rm -rf {} \;
 
 echo "备份完成"

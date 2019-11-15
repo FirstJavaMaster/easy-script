@@ -29,11 +29,6 @@ then
     mkdir -p ${backup_dir}
 fi
 
-echo ""
-echo "删除过期备份和空文件夹"
-find ${backup_dir} -mtime +30 -type f -name "*.tar.gz" -print -exec rm -rf {} \;
-find ${backup_dir} -type d -empty -print -exec rm -rf {} \;
-
 # "获取mysql里所有的数据库"
 databases=`mysql --login-path=slkj -e "SHOW DATABASES;" | tr -d "| " | grep -Ev ${exclude_databases}`
 
@@ -56,6 +51,10 @@ if ${exist_error}; then
     ip=`ip addr | grep 'state UP' -A2 | sed -n '3p' | awk '{print $2}' | awk -F"/" '{print $1}'`
     mail -s "数据库备份异常 - ${ip}" ${error_email} < tail -n 50 ${log_file}
 fi
+
+echo ""
+echo "删除空文件夹"
+find ${backup_dir} -type d -empty -print -exec rm -rf {} \;
 
 echo "备份脚本结束"
 echo ""
