@@ -1,1 +1,1 @@
-kill -9 "$(ps -ef | grep chrome | awk '{print $2}')"
+kill -9 "$(ps -ef | grep chrome | grep -v grep | awk '{print $2}')"
