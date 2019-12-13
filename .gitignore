@@ -3,4 +3,5 @@
 
 ### pyinstaller
 build/
+dist/
 *.spec
