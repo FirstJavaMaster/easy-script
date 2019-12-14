@@ -12,6 +12,9 @@ steam_dir = r'E:/SteamCMD'
 # steamCMD可执行文件的名称
 steam_exe_name = 'dontstarve_dedicated_server_nullrenderer.exe'
 
+# 版本号
+version = 1.0
+
 
 # 获取游戏存档目录
 def get_save_file_dir():
@@ -96,7 +99,7 @@ class Mod:
 
 def menu():
     print()
-    print('饥荒联机工具')
+    print('饥荒联机工具 v%s' % version)
     print('  1. 更新游戏')
     print('  2. 刷新mod配置')
     print('  3. 查看服务状态')
@@ -106,11 +109,11 @@ def menu():
     print()
     input_value = input('输入数字, 选择功能. 输入回车退出程序 >>> ')
 
+    print()
     if input_value == '':
         print('程序退出')
         return False
 
-    print()
     if input_value == '1':
         Game.stop()
         Game.update_game()
