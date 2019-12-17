@@ -44,6 +44,7 @@ class Game:
     def start():
         exe_dir = get_game_home() + "/bin"
         os.chdir(exe_dir)
+        print('开启服务器: 地面 / 洞穴')
         os.system('start "DST Master" %s -console -cluster %s -shard Master' % (steam_exe_name, world_name))
         os.system('start "DST Caves" %s -console -cluster %s -shard Caves' % (steam_exe_name, world_name))
 
@@ -103,18 +104,15 @@ def menu():
     print('  1. 更新游戏')
     print('  2. 刷新mod配置')
     print('  3. 查看服务状态')
-    print('  4. 启动服务')
-    print('  5. 停止服务')
-    print('  6. 重启服务')
+    print('  4. 启动 / 停止 / 重启')
     print()
     input_value = input('输入数字, 选择功能. 输入回车退出程序 >>> ')
-
     print()
+
     if input_value == '':
         print('程序退出')
         return False
-
-    if input_value == '1':
+    elif input_value == '1':
         Game.stop()
         Game.update_game()
         Mod.update_mod()
@@ -123,11 +121,26 @@ def menu():
     elif input_value == '3':
         Game.status()
     elif input_value == '4':
-        Game.start()
-    elif input_value == '5':
-        Game.stop()
-    elif input_value == '6':
-        Game.restart()
+        print('  1. 启动')
+        print('  2. 停止')
+        print('  3. 重启')
+        print()
+        input_value_2 = input('输入数字, 选择功能. 输入回车退出程序 >>> ')
+        print()
+
+        if input_value_2 == '':
+            print('程序退出')
+            return False
+        elif input_value_2 == '1':
+            Game.start()
+            return False
+        elif input_value_2 == '2':
+            Game.stop()
+        elif input_value_2 == '3':
+            Game.restart()
+            return False
+        else:
+            print('!!! 输入有误, 请重新输入 !!!')
     else:
         print('!!! 输入有误, 请重新输入 !!!')
     return True
