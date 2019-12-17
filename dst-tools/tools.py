@@ -44,8 +44,8 @@ class Game:
     def start():
         exe_dir = get_game_home() + "/bin"
         os.chdir(exe_dir)
-        os.system('start "DST Master" /min %s -console -cluster %s -shard Master' % (steam_exe_name, world_name))
-        os.system('start "DST Caves" /min %s -console -cluster %s -shard Caves' % (steam_exe_name, world_name))
+        os.system('start "DST Master" %s -console -cluster %s -shard Master' % (steam_exe_name, world_name))
+        os.system('start "DST Caves" %s -console -cluster %s -shard Caves' % (steam_exe_name, world_name))
 
     @staticmethod
     def restart():
