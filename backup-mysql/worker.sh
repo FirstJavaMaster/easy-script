@@ -5,7 +5,7 @@ database=$1
 target_dir=$2
 
 time=$(date +%Y%m%d_%H%M)
-file_name="${database}_mysql_backup_${time}"
+file_name="${database}_${time}"
 
 tmp_file=${file_name}.sql
 tar_file=${target_dir}/${file_name}.tar.gz
