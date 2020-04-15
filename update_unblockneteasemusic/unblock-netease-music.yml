@@ -1,0 +1,13 @@
+# https://github.com/nondanee/UnblockNeteaseMusic
+
+version: '3'
+
+services:
+  unblockneteasemusic:
+    image: nondanee/unblockneteasemusic
+    restart: always
+    environment:
+      NODE_ENV: production
+    ports:
+      - 9999:8080
+    command: ['-s', '-e', 'http://music.163.com']
