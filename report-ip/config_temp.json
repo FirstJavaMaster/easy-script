@@ -1,0 +1,10 @@
+{
+  "mail_host": "smtp.163.com",
+  "mail_port": "25",
+  "mail_user": "why9527@163.com",
+  "mail_password": "THANKSFORSTAR",
+  "sender": "why9527@163.com",
+  "receivers": [
+    "why9527@163.com"
+  ]
+}

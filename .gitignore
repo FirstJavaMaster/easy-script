@@ -1,6 +1,11 @@
 .idea/
 *.iml
 
+# report-ip
+report-ip/config.json
+report-ip/last_ip.txt
+report-ip/log.txt
+
 ### pyinstaller
 build/
 dist/
