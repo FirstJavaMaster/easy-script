@@ -1,2 +1,1 @@
-pyinstaller -F encode.py
-pyinstaller -F decode.py
+pyinstaller -F --clean runner.py
