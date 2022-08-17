@@ -12,6 +12,7 @@ report-ip/last_ip.txt
 report-ip/log.txt
 
 ### pyinstaller
+__pycache__
 build/
 dist/
 *.spec
