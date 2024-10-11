@@ -7,11 +7,6 @@ file-desensitization/source
 file-desensitization/encode
 file-desensitization/decode
 
-# report-ip
-report-ip/config.json
-report-ip/last_ip.txt
-report-ip/log.txt
-
 ### pyinstaller
 __pycache__
 build/

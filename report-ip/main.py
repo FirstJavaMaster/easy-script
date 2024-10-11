@@ -1,7 +1,6 @@
 import datetime
 import smtplib
 import socket
-import time
 from email.mime.text import MIMEText
 
 from mako.template import Template
